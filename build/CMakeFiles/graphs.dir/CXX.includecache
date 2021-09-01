@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/graphs.h
+SDL2/SDL.h
+-
+
+/home/vladnovoren/projects/graphs/src/main.cpp
+graphs.h
+/home/vladnovoren/projects/graphs/src/graphs.h
+

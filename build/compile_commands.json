@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/vladnovoren/projects/graphs/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/vladnovoren/projects/graphs/include  -g   -o CMakeFiles/graphs.dir/src/main.cpp.o -c /home/vladnovoren/projects/graphs/src/main.cpp",
+  "file": "/home/vladnovoren/projects/graphs/src/main.cpp"
+}
+]
