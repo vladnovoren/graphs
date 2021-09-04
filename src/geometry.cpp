@@ -5,7 +5,7 @@ void RenderDrawCircle(SDL_Renderer* renderer, Circle* circle) {
   assert(renderer);
   assert(circle);
 
-  int dx    = 1,
+  int dx    = 4,
       old_x = -circle->radius,
       old_y = 0,
       cur_x = old_x + dx,
