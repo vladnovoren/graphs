@@ -15,5 +15,7 @@ struct App {
 
 int App_Init(App* app);
 
+int App_Deinit(App* app);
+
 
 #endif / app.h /

@@ -1,1 +1,1 @@
-/bin/x86_64-linux-gnu-g++-9  -g   CMakeFiles/graphs.dir/src/main.cpp.o  -o graphs  -lSDL2 
+/usr/bin/c++     CMakeFiles/graphs.dir/src/main.cpp.o CMakeFiles/graphs.dir/src/graph.cpp.o CMakeFiles/graphs.dir/src/geometry.cpp.o  -o graphs  -lSDL2 

@@ -1,3 +1,4 @@
 /home/vladnovoren/projects/graphs/build/CMakeFiles/rebuild_cache.dir
 /home/vladnovoren/projects/graphs/build/CMakeFiles/edit_cache.dir
+/home/vladnovoren/projects/graphs/build/CMakeFiles/test.dir
 /home/vladnovoren/projects/graphs/build/CMakeFiles/graphs.dir

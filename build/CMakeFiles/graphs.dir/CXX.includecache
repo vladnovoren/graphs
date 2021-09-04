@@ -6,11 +6,41 @@
 
 #IncludeRegexTransform: 
 
-../include/graphs.h
+../include/geometry.h
 SDL2/SDL.h
 -
+assert.h
+-
+math.h
+-
+list.h
+../include/list.h
+
+../include/graph.h
+SDL2/SDL.h
+-
+geometry.h
+../include/geometry.h
+
+../include/list.h
+cstddef
+-
+cassert
+-
+cstdlib
+-
+cstdio
+-
+climits
+-
+vector_main.h
+../include/vector_main.h
+
+../include/vector_main.h
 
 /home/vladnovoren/projects/graphs/src/main.cpp
-graphs.h
-/home/vladnovoren/projects/graphs/src/graphs.h
+graph.h
+/home/vladnovoren/projects/graphs/src/graph.h
+time.h
+/home/vladnovoren/projects/graphs/src/time.h
 

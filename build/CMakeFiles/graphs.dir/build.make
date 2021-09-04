@@ -60,27 +60,57 @@ include CMakeFiles/graphs.dir/flags.make
 CMakeFiles/graphs.dir/src/main.cpp.o: CMakeFiles/graphs.dir/flags.make
 CMakeFiles/graphs.dir/src/main.cpp.o: ../src/main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vladnovoren/projects/graphs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/graphs.dir/src/main.cpp.o"
-	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphs.dir/src/main.cpp.o -c /home/vladnovoren/projects/graphs/src/main.cpp
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphs.dir/src/main.cpp.o -c /home/vladnovoren/projects/graphs/src/main.cpp
 
 CMakeFiles/graphs.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphs.dir/src/main.cpp.i"
-	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vladnovoren/projects/graphs/src/main.cpp > CMakeFiles/graphs.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vladnovoren/projects/graphs/src/main.cpp > CMakeFiles/graphs.dir/src/main.cpp.i
 
 CMakeFiles/graphs.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphs.dir/src/main.cpp.s"
-	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vladnovoren/projects/graphs/src/main.cpp -o CMakeFiles/graphs.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vladnovoren/projects/graphs/src/main.cpp -o CMakeFiles/graphs.dir/src/main.cpp.s
+
+CMakeFiles/graphs.dir/src/graph.cpp.o: CMakeFiles/graphs.dir/flags.make
+CMakeFiles/graphs.dir/src/graph.cpp.o: ../src/graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vladnovoren/projects/graphs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/graphs.dir/src/graph.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphs.dir/src/graph.cpp.o -c /home/vladnovoren/projects/graphs/src/graph.cpp
+
+CMakeFiles/graphs.dir/src/graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphs.dir/src/graph.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vladnovoren/projects/graphs/src/graph.cpp > CMakeFiles/graphs.dir/src/graph.cpp.i
+
+CMakeFiles/graphs.dir/src/graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphs.dir/src/graph.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vladnovoren/projects/graphs/src/graph.cpp -o CMakeFiles/graphs.dir/src/graph.cpp.s
+
+CMakeFiles/graphs.dir/src/geometry.cpp.o: CMakeFiles/graphs.dir/flags.make
+CMakeFiles/graphs.dir/src/geometry.cpp.o: ../src/geometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vladnovoren/projects/graphs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/graphs.dir/src/geometry.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphs.dir/src/geometry.cpp.o -c /home/vladnovoren/projects/graphs/src/geometry.cpp
+
+CMakeFiles/graphs.dir/src/geometry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphs.dir/src/geometry.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vladnovoren/projects/graphs/src/geometry.cpp > CMakeFiles/graphs.dir/src/geometry.cpp.i
+
+CMakeFiles/graphs.dir/src/geometry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphs.dir/src/geometry.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vladnovoren/projects/graphs/src/geometry.cpp -o CMakeFiles/graphs.dir/src/geometry.cpp.s
 
 # Object files for target graphs
 graphs_OBJECTS = \
-"CMakeFiles/graphs.dir/src/main.cpp.o"
+"CMakeFiles/graphs.dir/src/main.cpp.o" \
+"CMakeFiles/graphs.dir/src/graph.cpp.o" \
+"CMakeFiles/graphs.dir/src/geometry.cpp.o"
 
 # External object files for target graphs
 graphs_EXTERNAL_OBJECTS =
 
 graphs: CMakeFiles/graphs.dir/src/main.cpp.o
+graphs: CMakeFiles/graphs.dir/src/graph.cpp.o
+graphs: CMakeFiles/graphs.dir/src/geometry.cpp.o
 graphs: CMakeFiles/graphs.dir/build.make
 graphs: CMakeFiles/graphs.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vladnovoren/projects/graphs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable graphs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vladnovoren/projects/graphs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable graphs"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphs.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

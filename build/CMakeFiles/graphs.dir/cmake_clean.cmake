@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/graphs.dir/src/geometry.cpp.o"
+  "CMakeFiles/graphs.dir/src/graph.cpp.o"
   "CMakeFiles/graphs.dir/src/main.cpp.o"
   "graphs"
   "graphs.pdb"
