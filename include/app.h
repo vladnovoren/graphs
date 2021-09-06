@@ -4,6 +4,7 @@
 #include "graph.h"
 #include <time.h>
 
+const char* const APP_TITLE = "Graphs";
 
 const int APP_WINDOW_WIDTH  = 1400;
 const int APP_WINDOW_HEIGHT = 800;

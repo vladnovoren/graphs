@@ -15,6 +15,8 @@ int App_Init(App* app) {
                                   &app->window,
                                   &app->renderer))
     return GetSdlErr();
+  
+  SDL_SetWindowTitle(app->window, APP_TITLE);
 
   return 0;
 }
@@ -27,7 +29,7 @@ int App_ClearBlack(App* app) {
   if (err_code)
     return GetSdlErr(err_code);
 
-  err_code = SDL_SetRenderDrawColor(app->renderer, 0x00, 0x00, 0x00, 0xFF);
+  err_code = SDL_SetRenderDrawColor(app->renderer, 0xEE, 0xEE, 0xEE, 0xFF);
   if (err_code)
     return GetSdlErr(err_code);
   
