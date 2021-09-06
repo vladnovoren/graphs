@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <cstdio>
 #include <climits>
+#include <cstring>
 #include "vector_main.h"
 
 

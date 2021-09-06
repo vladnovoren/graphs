@@ -1,7 +1,24 @@
 #ifndef APP_H
 #define APP_H
 
-#include "graphs.h"
+#include "graph.h"
+#include <time.h>
+
+
+const int APP_WINDOW_WIDTH  = 1400;
+const int APP_WINDOW_HEIGHT = 800;
+
+const int BIG_GRAPH_X = 0;
+const int BIG_GRAPH_Y = 0;
+
+const int BIG_GRAPH_WIDTH  = 800;
+const int BIG_GRAPH_HEIGHT = 800;
+
+const int LIL_GRAPH_X = 1000;
+const int LIL_GRAPH_Y = 0;
+
+const int LIL_GRAPH_WIDTH  = 400;
+const int LIL_GRAPH_HEIGHT = 400;
 
 
 struct App {
@@ -13,9 +30,14 @@ struct App {
 };
 
 
+// App running
 int App_Init(App* app);
+
+int App_ClearBlack(App* app);
+
+int App_Exec(App* app);
 
 int App_Deinit(App* app);
 
 
-#endif / app.h /
+#endif /* app.h */

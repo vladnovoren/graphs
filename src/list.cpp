@@ -311,7 +311,3 @@ size_t List_Find(List* list, const ListElemT elem) {
 
   return LIST_INVALID_ID;
 }
-
-
-
-#endif /* list.h */

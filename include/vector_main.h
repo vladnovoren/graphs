@@ -1,6 +1,7 @@
 #ifndef VECTOR_MAIN_H
 #define VECTOR_MAIN_H
 
+#include "common.h"
 
 struct Vector {
 	float start_x;
@@ -9,7 +10,6 @@ struct Vector {
 	float proj_x;
 	float proj_y;
 };
-
 
 typedef Vector ListElemT;
 

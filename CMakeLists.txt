@@ -4,7 +4,8 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${project_SOURCE_DIR}/cmake")
 
 project(graphs VERSION 1.0)
 
-add_executable(graphs src/main.cpp src/graph.cpp src/geometry.cpp)
+add_executable(graphs src/main.cpp src/graph.cpp src/geometry.cpp src/app.cpp src/list.cpp src/common.cpp)
+
 add_executable(test src/test.cpp)
 
 target_include_directories(graphs PUBLIC include/)
