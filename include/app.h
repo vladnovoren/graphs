@@ -2,7 +2,7 @@
 #define APP_H
 
 #include "graph.h"
-#include <time.h>
+#include <ctime>
 
 const char* const APP_TITLE = "Graphs";
 
