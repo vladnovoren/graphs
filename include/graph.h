@@ -4,22 +4,22 @@
 #include "geometry.h"
 
 
-struct Ranges {
-	float min_x;
-	float max_x;
+// struct Ranges {
+// 	double min_x;
+// 	double max_x;
 
-	float min_y;
-	float max_y;
-};
+// 	double min_y;
+// 	double max_y;
+// };
 
 struct CoordSys {
 	SDL_Texture* texture;
 	SDL_Rect rect;
 	Ranges ranges;
-	float center_x;
-	float center_y;
-	float dx;
-	float dy;
+	double center_x;
+	double center_y;
+	double dx;
+	double dy;
 };
 
 struct Graph {
@@ -35,11 +35,11 @@ int CoordSys_Init(CoordSys* coord_sys, SDL_Renderer* renderer, const SDL_Rect re
 
 int CoordSys_Render(CoordSys* coord_sys, SDL_Renderer* renderer);
 
-float PrettyFunction(float x);
+double PrettyFunction(double x);
 
-float CoordSys_RealToPixelX(CoordSys* coord_sys, float x);
+double CoordSys_RealToPixelX(CoordSys* coord_sys, double x);
 
-float CoordSys_RealToPixelY(CoordSys* coord_sys, float y);
+double CoordSys_RealToPixelY(CoordSys* coord_sys, double y);
 
 int CoordSys_PlotFunc(CoordSys* coord_sys, SDL_Renderer* renderer);
 

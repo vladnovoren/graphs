@@ -1,7 +1,7 @@
 #ifndef APP_H
 #define APP_H
 
-#include "graph.h"
+#include "plotter.h"
 #include <ctime>
 
 const char* const APP_TITLE = "Graphs";
@@ -9,25 +9,45 @@ const char* const APP_TITLE = "Graphs";
 const int APP_WINDOW_WIDTH  = 1400;
 const int APP_WINDOW_HEIGHT = 800;
 
-const int BIG_GRAPH_X = 0;
-const int BIG_GRAPH_Y = 0;
+const SDL_Rect BIG_PLOT_LOCATION = {
+  0,
+  0,
+  800,
+  800
+};
 
-const int BIG_GRAPH_WIDTH  = 800;
-const int BIG_GRAPH_HEIGHT = 800;
+const SDL_Rect LIL_PLOT_LOCATION = {
+  1000,
+  0,
+  400,
+  400
+};
 
-const int LIL_GRAPH_X = 1000;
-const int LIL_GRAPH_Y = 0;
+const int BIG_PLOT_X = 0;
+const int BIG_PLOT_Y = 0;
 
-const int LIL_GRAPH_WIDTH  = 400;
-const int LIL_GRAPH_HEIGHT = 400;
+const int BIG_PLOT_WIDTH  = 800;
+const int BIG_PLOT_HEIGHT = 800;
+
+const int LIL_PLOT_X = 1000;
+const int LIL_PLOT_Y = 0;
+
+const int LIL_PLOT_WIDTH  = 400;
+const int LIL_PLOT_HEIGHT = 400;
 
 
-struct App {
+class App {
+ private:
 	SDL_Window*   window;
 	SDL_Renderer* renderer;
+ public:
+  App();
 
-  Graph lil_graph;
-  Graph big_graph;
+  void ClearBack();
+
+  void Exec();
+
+  ~App();
 };
 
 

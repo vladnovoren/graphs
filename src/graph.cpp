@@ -25,8 +25,8 @@ int CoordSys_Init(CoordSys* coord_sys, SDL_Renderer* renderer, const SDL_Rect re
     ranges.max_y
   };
 
-  coord_sys->dx = (float)rect.w / (ranges.max_x - ranges.min_x);
-  coord_sys->dy = (float)rect.h / (ranges.max_y - ranges.min_y);
+  coord_sys->dx = (double)rect.w / (ranges.max_x - ranges.min_x);
+  coord_sys->dy = (double)rect.h / (ranges.max_y - ranges.min_y);
 
   coord_sys->center_x = coord_sys->dx * abs(ranges.min_x);
   coord_sys->center_y = coord_sys->dy * abs(ranges.max_y);
@@ -35,19 +35,19 @@ int CoordSys_Init(CoordSys* coord_sys, SDL_Renderer* renderer, const SDL_Rect re
 }
 
 
-float PrettyFunction(float x) {
+double PrettyFunction(double x) {
   return x * sin(x);
 }
 
 
-float CoordSys_RealToPixelX(CoordSys* coord_sys, float x) {
+double CoordSys_RealToPixelX(CoordSys* coord_sys, double x) {
   assert(coord_sys);
 
   return (x - coord_sys->ranges.min_x) * coord_sys->dx;
 }
 
 
-float CoordSys_RealToPixelY(CoordSys* coord_sys, float y) {
+double CoordSys_RealToPixelY(CoordSys* coord_sys, double y) {
   assert(coord_sys);
 
   return (coord_sys->ranges.max_y - y) * coord_sys->dy;
@@ -60,12 +60,12 @@ int CoordSys_PlotFunc(CoordSys* coord_sys, SDL_Renderer* renderer) {
 
   int err_code = 0;
 
-  float step = 1 / coord_sys->dx;
+  double step = 1 / coord_sys->dx;
 
-  float prev_y = 0,
+  double prev_y = 0,
         cur_y  = PrettyFunction(coord_sys->ranges.min_x);
 
-  for (float x = coord_sys->ranges.min_x + step; x < coord_sys->ranges.max_x; x += step) {
+  for (double x = coord_sys->ranges.min_x + step; x < coord_sys->ranges.max_x; x += step) {
     prev_y = cur_y;
     cur_y = PrettyFunction(x);
     err_code = SDL_RenderDrawLineF(renderer, CoordSys_RealToPixelX(coord_sys, x - step), CoordSys_RealToPixelY(coord_sys, prev_y),
@@ -100,13 +100,13 @@ int CoordSys_Render(CoordSys* coord_sys, SDL_Renderer* renderer) {
     return GetSdlErr(err_code);
 
   if (coord_sys->ranges.min_x < 0 && 0 < coord_sys->ranges.max_x) {
-    err_code = Vector_Render(renderer, {coord_sys->center_x, (float)coord_sys->rect.h, 0, (float)-coord_sys->rect.h}, false);
+    err_code = Vector_Render(renderer, {coord_sys->center_x, (double)coord_sys->rect.h, 0, (double)-coord_sys->rect.h}, false);
     if (err_code)
       return GetSdlErr(err_code);
   }
 
   if (coord_sys->ranges.min_y < 0 && 0 < coord_sys->ranges.max_y) {
-    err_code = Vector_Render(renderer, {0, coord_sys->center_y, (float)coord_sys->rect.w, 0}, false);
+    err_code = Vector_Render(renderer, {0, coord_sys->center_y, (double)coord_sys->rect.w, 0}, false);
     if (err_code)
       return GetSdlErr(err_code);
   }

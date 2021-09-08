@@ -6,7 +6,7 @@ Vector::Vector() {
 }
 
 
-Vector::Vector(float begin_x, float begin_y, float proj_x, float proj_y) {
+Vector::Vector(double begin_x, double begin_y, double proj_x, double proj_y) {
   this->begin_x = begin_x;
   this->begin_y = begin_y;
   this->proj_x = proj_x;
@@ -14,53 +14,59 @@ Vector::Vector(float begin_x, float begin_y, float proj_x, float proj_y) {
 }
 
 
-float Vector::GetBeginX() {
+double Vector::GetBeginX() const {
   return begin_x;
 }
 
 
-float Vector::GetBeginY() {
+double Vector::GetBeginY() const {
   return begin_y;
 }
 
 
-float Vector::GetProjX() {
+double Vector::GetProjX() const {
   return proj_x;
 }
 
 
-float Vector::GetProjY() {
+double Vector::GetProjY() const {
   return proj_y;
 }
 
 
-void Vector::SetBeginX(float begin_x) {
+void Vector::SetBeginX(double begin_x) {
   this->begin_x = begin_x;
 }
 
 
-void Vector::SetBeginY(float begin_y) {
+void Vector::SetBeginY(double begin_y) {
   this->begin_y = begin_y;
 }
 
 
-void Vector::SetProjX(float proj_x) {
+void Vector::SetProjX(double proj_x) {
   this->proj_x = proj_x;
 }
 
 
-void Vector::SetProjY(float proj_y) {
+void Vector::SetProjY(double proj_y) {
   this->proj_y = proj_y;
 }
 
 
-float Vector::Length() {
+double Vector::Length() const {
   return sqrt(proj_x * proj_x + proj_y * proj_y);
 }
 
 
-float Vector::Angle() {
+double Vector::Angle() const {
   return atan2(proj_y, proj_x);
+}
+
+
+void Vector::ChangeLength(const double new_len) {
+  double mul = double(new_len / Length());
+  NumberMul(mul);
 }
 
 
@@ -77,41 +83,43 @@ void Vector::Sub(const Vector& v) {
 
 
 void Vector::CounterDirect() {
+  begin_x += proj_x;
+  begin_y += proj_y;
   proj_x *= -1;
   proj_y *= -1;
 }
 
 
-void Vector::NumberMul(const float mul) {
+void Vector::NumberMul(const double mul) {
   proj_x *= mul;
   proj_y *= mul;
 }
 
 
 void Vector::RotateLeft() {
-  float temp = proj_x;
+  double temp = proj_x;
   proj_x = -proj_y;
   proj_y = temp;
 }
 
 
 void Vector::RotateRight() {
-  float temp = proj_x;
+  double temp = proj_x;
   proj_x = proj_y;
   proj_y = -temp;
 }
 
 
-void Vector::Rotate(const float phi) {
-  float length = Length();
-  float angle = Angle() + phi;
+void Vector::Rotate(const double phi) {
+  double length = Length();
+  double angle = Angle() + phi;
   proj_x = cos(angle) * length;
   proj_y = sin(angle) * length;
 }
 
 
-void ~Vector() {
-  
+Vector::~Vector() {
+
 }
 
 
@@ -138,7 +146,7 @@ void ~Vector() {
 //          cur_x = old_x + 1,
 //          cur_y = 0;
 
-//   float sqr_radius = pow(circle.radius, 2);
+//   double sqr_radius = pow(circle.radius, 2);
 //   for (; cur_x <= circle.radius; ++cur_x) {
 //     cur_y = sqrt(sqr_radius - cur_x * cur_x);
 
@@ -173,7 +181,7 @@ void ~Vector() {
 // int Vector_Render(SDL_Renderer* renderer, Vector vector, bool dot) {
 //   assert(renderer);
 
-//   float vector_end_x = vector.start_x + vector.proj_x,
+//   double vector_end_x = vector.start_x + vector.proj_x,
 //         vector_end_y = vector.start_y + vector.proj_y;
 
 //   int err_code = SDL_RenderDrawLineF(renderer, vector.start_x, vector.start_y, vector_end_x, vector_end_y);
@@ -186,15 +194,15 @@ void ~Vector() {
 //       return err_code;
 //   }
 
-//   float vector_phi = atan2(vector.proj_y, vector.proj_x);
-//   float first_phi = vector_phi + VECTOR_ARROW_ANGLE;
-//   float second_phi = vector_phi - VECTOR_ARROW_ANGLE;
+//   double vector_phi = atan2(vector.proj_y, vector.proj_x);
+//   double first_phi = vector_phi + VECTOR_ARROW_ANGLE;
+//   double second_phi = vector_phi - VECTOR_ARROW_ANGLE;
 
-//   float first_x = vector_end_x - VECTOR_ARRAW_LEN * cos(first_phi);
-//   float first_y = vector_end_y - VECTOR_ARRAW_LEN * sin(first_phi);
+//   double first_x = vector_end_x - VECTOR_ARRAW_LEN * cos(first_phi);
+//   double first_y = vector_end_y - VECTOR_ARRAW_LEN * sin(first_phi);
 
-//   float second_x = vector_end_x - VECTOR_ARRAW_LEN * cos(second_phi);
-//   float second_y = vector_end_y - VECTOR_ARRAW_LEN * sin(second_phi);
+//   double second_x = vector_end_x - VECTOR_ARRAW_LEN * cos(second_phi);
+//   double second_y = vector_end_y - VECTOR_ARRAW_LEN * sin(second_phi);
 
 //   err_code = SDL_RenderDrawLineF(renderer, vector_end_x, vector_end_y, first_x, first_y);
 //   if (err_code)

@@ -5,6 +5,7 @@
     "cstdio": "cpp",
     "cstring": "cpp",
     "climits": "cpp",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "cassert": "cpp"
   }
 }

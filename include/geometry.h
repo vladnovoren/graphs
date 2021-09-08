@@ -5,50 +5,54 @@
 #include <cassert>
 #include <cmath>
 
-const float VECTOR_CIRCLE_RADIUS = 3;
-const float VECTOR_ARROW_ANGLE   = 0.523599;
-const float VECTOR_ARRAW_LEN = 10;
+const double VECTOR_CIRCLE_RADIUS = 3;
+const double VECTOR_ARROW_P_PROJ = 10;
+const double VECTOR_ARROW_MUL = 0.5;
+
+
 
 struct Ranges {
-  float min_x;
-  float min_y;
+  double min_x;
+  double min_y;
 
-  float max_x;
-  float max_y;
+  double max_x;
+  double max_y;
 };
 
 
 class Vector {
  private:
-  float begin_x;
-  float begin_y;
+  double begin_x;
+  double begin_y;
 
-  float proj_x;
-  float proj_y;
+  double proj_x;
+  double proj_y;
  public:
   Vector();
 
-  explicit Vector(float begin_x, float begin_y, float proj_x, float proj_y);
+  explicit Vector(double begin_x, double begin_y, double proj_x, double proj_y);
 
-  float GetBeginX();
+  double GetBeginX() const;
 
-  float GetBeginY();
+  double GetBeginY() const;
 
-  float GetProjX();
+  double GetProjX() const;
 
-  float GetProjY();
+  double GetProjY() const;
 
-  void SetBeginX(float begin_x);
+  void SetBeginX(double begin_x);
 
-  void SetBeginY(float begin_y);
+  void SetBeginY(double begin_y);
 
-  void SetProjX(float proj_x);
+  void SetProjX(double proj_x);
 
-  void SetProjY(float proj_y);
+  void SetProjY(double proj_y);
 
-  float Length();
+  double Length() const;
 
-  float Angle();
+  double Angle() const;
+
+  void ChangeLength(const double new_len);
 
   void Add(const Vector& v);
 
@@ -56,13 +60,13 @@ class Vector {
 
   void CounterDirect();
 
-  void NumberMul(const float mul);
+  void NumberMul(const double mul);
 
   void RotateLeft();
 
   void RotateRight();
 
-  void Rotate(const float phi);
+  void Rotate(const double phi);
 
   ~Vector();
 };
@@ -90,9 +94,9 @@ class Vector {
 
 
 // struct Circle {
-//   float center_x;
-//   float center_y;
-//   float radius;
+//   double center_x;
+//   double center_y;
+//   double radius;
 //   bool is_filled;
 // };
 
